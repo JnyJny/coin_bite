@@ -4,7 +4,7 @@ Dime = "d"
 Quarter = "q"
 
 
-def coins_on_the_table(n_pennies: int = 1001) -> list:
+def coins_on_the_table(n_pennies: int = 1001) -> list[str]:
 
     substitutions = {1: Penny, 2: Nickel, 3: Dime, 4: Quarter}
     coins = []

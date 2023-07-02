@@ -14,6 +14,8 @@ pytest = "^7.4.0"
 
 [tool.poe.tasks]
 
+requirements = "poetry export --with=dev -o requirements.txt"
+
 reset = "rm -f coins.py"
 
 _string = ["reset", {cmd ="ln coins_str.py coins.py"}]

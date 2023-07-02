@@ -1,32 +1,3 @@
-from enum import Enum
-from decimal import Decimal
-
-
-Penny = "p"
-Nickel = "n"
-Dime = "d"
-Quarter = "q"
-
-
-class CoinInt(int, Enum):
-    Penny = 1
-    Nickel = 5
-    Dime = 10
-    Quarter = 25
-
-
-Penny = CoinInt.Penny
-Nickel = CoinInt.Nickel
-Dime = CoinInt.Dime
-Quarter = CoinInt.Quarter
-
-
-Penny = Decimal(0.01)
-Nickel = Decimal(0.05)
-Dime = Decimal(0.1)
-Quarter = Decimal(0.25)
-
-
 class Coin:
     @classmethod
     def penny(cls) -> "Coin":
