@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "coins"
+version = "0.1.0"
+description = ""
+authors = ["JnyJny <erik.oshaughnessy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.20.0"
+pytest = "^7.4.0"
+
+[tool.poe.tasks]
+
+reset = "rm -f coins.py"
+
+_string = ["reset", {cmd ="ln coins_str.py coins.py"}]
+_enum = ["reset", {cmd="ln coins_enum.py coins.py"}]
+_decimal = ["reset", {cmd="ln coins_decimal.py coins.py"}]
+_class = ["reset", {cmd="ln coins_class.py coins.py"}]
+
+_test = "pytest"
+
+test_string =  ["_string", "_test"]
+test_enum =    ["_enum", "_test"]
+test_decimal = ["_decimal", "_test"]
+test_class =   ["_class", "_test"]
+
+test = ["test_string", "test_enum", "test_decimal", "test_class", "reset"]
+
+
+[buildystem]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
