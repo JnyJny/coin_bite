@@ -46,10 +46,12 @@ def test_total_dollar_amount(
     and Quarter to provide their values.
     """
 
-    counts = Counter(coins)
-
     total = 0
-    for coin, value in coin_value_map.items():
-        total += counts[coin] * value
+    for coin in coins:
+        for key, value in coin_value_map.items():
+            if coin == key:
+                total += value
+
+    total = round(total, 2)
 
     assert total == expected
