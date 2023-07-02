@@ -9,8 +9,8 @@ and then test each of those implementations with the same pytest test.
 Clone this repo and change directory into the repo:
 
 ```console
-$ git clone https://github.com/JnyJny/coins_bite
-$ cd coins_bite
+$ git clone https://github.com/JnyJny/coin_bite
+$ cd coin_bite
 ```
 
 ### With Poetry
